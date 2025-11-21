@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Gestionnaire de Tâches</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow {
+    background-color: #ffffff;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_filter">
+      <item>
+       <widget class="QLabel" name="label_filter">
+        <property name="text">
+         <string>Filtrer par état :</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="comboBox_filter">
+        <property name="styleSheet">
+         <string notr="true">QComboBox {
+    background-color: white;
+    border: 1px solid #d2d2d7;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 13px;
+}
+
+QComboBox:hover {
+    border-color: #0071e3;
+}
+
+QComboBox::drop-down {
+    border: none;
+}
+
+QComboBox QAbstractItemView {
+    background-color: white;
+    border: 1px solid #d2d2d7;
+    selection-background-color: #0071e3;
+    selection-color: white;
+}</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>Tous</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>À faire</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>En cours</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Réalisé</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Abandonné</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>En attente</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QTableWidget" name="tableWidget_tasks">
+      <property name="styleSheet">
+       <string notr="true">QTableWidget {
+    background-color: white;
+    border: 1px solid #d2d2d7;
+    border-radius: 8px;
+    gridline-color: #e5e5ea;
+    selection-background-color: #0071e3;
+    selection-color: white;
+    font-size: 13px;
+}
+
+QTableWidget::item {
+    padding: 10px 8px;
+}
+
+QHeaderView::section {
+    background-color: #f5f5f7;
+    padding: 10px 8px;
+    border: none;
+    border-bottom: 1px solid #d2d2d7;
+    font-weight: 600;
+    font-size: 13px;
+}</string>
+      </property>
+      <property name="alternatingRowColors">
+       <bool>true</bool>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::SelectionMode::SingleSelection</enum>
+      </property>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
+      </property>
+      <attribute name="horizontalHeaderStretchLastSection">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="verticalHeaderDefaultSectionSize">
+       <number>45</number>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>Titre</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>État</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Date début</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Date fin</string>
+       </property>
+      </column>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_buttons">
+      <item>
+       <widget class="QPushButton" name="pushButton_add">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: #0071e3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+QPushButton:hover {
+    background-color: #0077ed;
+}
+
+QPushButton:pressed {
+    background-color: #006edb;
+}</string>
+        </property>
+        <property name="text">
+         <string>Ajouter</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_edit">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: #0071e3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+QPushButton:hover {
+    background-color: #0077ed;
+}
+
+QPushButton:pressed {
+    background-color: #006edb;
+}</string>
+        </property>
+        <property name="text">
+         <string>Modifier</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_close">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: #0071e3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+QPushButton:hover {
+    background-color: #0077ed;
+}
+
+QPushButton:pressed {
+    background-color: #006edb;
+}</string>
+        </property>
+        <property name="text">
+         <string>Clôturer</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_delete">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: #ff3b30;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+QPushButton:hover {
+    background-color: #ff453a;
+}
+
+QPushButton:pressed {
+    background-color: #e6342a;
+}</string>
+        </property>
+        <property name="text">
+         <string>Supprimer</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>900</width>
+     <height>33</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

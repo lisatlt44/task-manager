@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TaskDialog</class>
+ <widget class="QDialog" name="TaskDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>555</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Détails de la tâche</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog {
+    background-color: #f5f5f7;
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QGroupBox" name="groupBox_task">
+     <property name="title">
+      <string>Informations de la tâche</string>
+     </property>
+     <layout class="QFormLayout" name="formLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_title">
+        <property name="text">
+         <string>Titre :</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="lineEdit_title">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+    background-color: white;
+    border: 1px solid #d2d2d7;
+    border-radius: 6px;
+    padding: 8px;
+    font-size: 13px;
+}
+
+QLineEdit:focus {
+    border: 2px solid #0071e3;
+}</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_description">
+        <property name="styleSheet">
+         <string notr="true">QDialog {
+    background-color: #f5f5f7;
+}</string>
+        </property>
+        <property name="text">
+         <string>Description :</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QTextEdit" name="textEdit_description">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>80</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QTextEdit {
+    background-color: white;
+    border: 1px solid #d2d2d7;
+    border-radius: 6px;
+    padding: 8px;
+    font-size: 13px;
+}
+
+QTextEdit:focus {
+    border: 2px solid #0071e3;
+}</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_status">
+        <property name="text">
+         <string>État :</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QComboBox" name="comboBox_status">
+        <property name="styleSheet">
+         <string notr="true">QComboBox {
+    background-color: white;
+    border: 1px solid #d2d2d7;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 13px;
+}</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>À faire</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>En cours</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Réalisé</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Abandonné</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>En attente</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_start_date">
+        <property name="text">
+         <string>Date début :</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QDateTimeEdit" name="dateTimeEdit_start">
+        <property name="styleSheet">
+         <string notr="true">QDateTimeEdit {
+    background-color: white;
+    border: 1px solid #d2d2d7;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 13px;
+}
+
+QDateTimeEdit:focus {
+    border: 2px solid #0071e3;
+}</string>
+        </property>
+        <property name="calendarPopup">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="label_end_date">
+        <property name="text">
+         <string>Date fin :</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QDateTimeEdit" name="dateTimeEdit_end">
+        <property name="styleSheet">
+         <string notr="true">QDateTimeEdit {
+    background-color: white;
+    border: 1px solid #d2d2d7;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 13px;
+}
+
+QDateTimeEdit:focus {
+    border: 2px solid #0071e3;
+}</string>
+        </property>
+        <property name="calendarPopup">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_comments">
+     <property name="title">
+      <string>Commentaires</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QListWidget" name="listWidget_comments">
+        <property name="styleSheet">
+         <string notr="true">QListWidget {
+    background-color: white;
+    border: 1px solid #d2d2d7;
+    border-radius: 6px;
+    padding: 6px;
+    font-size: 13px;
+}
+
+QListWidget::item {
+    padding: 8px;
+    border-radius: 4px;
+    margin: 2px 0;
+}
+
+QListWidget::item:selected {
+    background-color: #0071e3;
+    color: white;
+}</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QPushButton" name="pushButton_delete_comment">
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #ff3b30;
+    color: white;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: 13px;
+}</string>
+          </property>
+          <property name="text">
+           <string>Supprimer</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_add_comment">
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #0071e3;
+    color: white;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: 13px;
+}</string>
+          </property>
+          <property name="text">
+           <string>Ajouter un commentaire</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>TaskDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>TaskDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
