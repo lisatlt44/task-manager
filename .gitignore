@@ -6,7 +6,6 @@ __pycache__/
 
 # Base de données
 data/*.db
-data/
 
 # IDE
 .vscode/
